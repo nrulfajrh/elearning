@@ -17,8 +17,8 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Selamat Datang {{Auth::user()->name}}</h5>
-            <p>Role saat ini adalah {{Auth::user()->role}}</p>
+            <h5 class="card-title">Welcome {{Auth::user()->name}}</h5>
+            <p>The current role is {{Auth::user()->role}}</p>
           </div>
         </div>
 
