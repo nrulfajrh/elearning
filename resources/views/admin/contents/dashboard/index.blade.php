@@ -17,8 +17,8 @@
 
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Example Card</h5>
-            <p>This is an examle page with no contrnt. You can use it as a starter for your custom pages.</p>
+            <h5 class="card-title">Selamat Datang {{Auth::user()->name}}</h5>
+            <p>Role saat ini adalah {{Auth::user()->role}}</p>
           </div>
         </div>
 

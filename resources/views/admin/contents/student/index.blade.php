@@ -22,20 +22,25 @@
                         <th>NIM</th>
                         <th>Class</th>
                         <th>Major</th>
+                        <th>Courses</th>
                         <th>Action</th>
                     </tr>
                     @foreach($students as $student)
                     <tr>
-                        <td>1</td>
+                        <td>{{ $loop ->iteration}}</td>
                         <td>{{ $student ->name}}</td>
                         <td>{{ $student ->nim}}</td>
                         <td>{{ $student ->class}}</td>
                         <td>{{ $student ->major}}</td>
-                        <td>
-                            <a href="#" class="btn warning">Edit</a>
-                            <a href="#" class="btn danger">Hapus</a>
+                        <td>{{ $student ->course->nama?? 'Belum mengikuti course'}}</td>
+                        <td class="d-flex">
+                            <a href="/admin/student/edit/{{$student->id}}" class="btn btn-warning m-2">Edit</a>
+                            <form action="/admin/student/delete/{{ $student->id}}" method="post">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn btn-danger" type="submit" onclick="return confirm('Apakah Anda yakin?')"> Hapus</button>
+                            </form>
                         </td>
-
                     </tr>
                     @endforeach
                 </table>
